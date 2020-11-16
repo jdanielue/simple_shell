@@ -10,7 +10,6 @@
 char  **our_strtok(char *str, const char *delim)
 {
 int iter, counter = 0, counter2 = 0, counter3 = 0, counter4 = 0, counter5 = 0;
-int  *puntero;
 char **palabras = NULL;
 
 for (iter = 0; str[iter] != '\0'; iter++)
