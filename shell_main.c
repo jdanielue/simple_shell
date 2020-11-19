@@ -42,15 +42,15 @@ int main(int ac, char **av, char **env)
         if (process_exce != 0) /* pedirle al proceso padre que espere */
         wait();
 
-	if (process_exce == 0)
-	{
-		for (i = 0; token_path[i]; i++)
+		if (process_exce == 0)
 		{
-			if (stat(token_path[i], &st) == 0)
+			for (i = 0; token_path[i]; i++)
 			{
-			execve(token_path[i], token_line, NULL);
+				if (stat(token_path[i], &st) == 0)
+				{
+				execve(token_path[i], token_line, NULL);
+				}
 			}
-		}
 		}
 	printf("%s : 1: %s: not found\n", av[0], token_line[0]);
 	}
