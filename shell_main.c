@@ -32,10 +32,10 @@ int main(int ac, char **av, char **env)
         token_line = our_strtok(linea, delim); /*TOKENIZA la linea*/
 
         for (i = 0; i < num_path; i++) /*concatena linea al token*/
-        {
-        token_path[i] = strcat(token_path[i], "/");
-	token_path[i] = strcat(token_path[i], token_line[0]);
-        }
+		{
+		token_path[i] = strcat(token_path[i], "/");
+		token_path[i] = strcat(token_path[i], token_line[0]);
+		}
 
 	process_exce = fork(); /* crear proceso hijo */
 
@@ -44,14 +44,14 @@ int main(int ac, char **av, char **env)
 
 	if (process_exce == 0)
 	{
-        for (i = 0; token_path[i]; i++)
-        {
-		if (stat(token_path[i], &st) == 0)
+		for (i = 0; token_path[i]; i++)
 		{
-		execve(token_path[i], token_line, NULL);
+			if (stat(token_path[i], &st) == 0)
+			{
+			execve(token_path[i], token_line, NULL);
+			}
 		}
-        }
-	}
+		}
 	printf("%s : 1: %s: not found\n", av[0], token_line[0]);
 	}
 return (0);
