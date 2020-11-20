@@ -46,16 +46,9 @@ void ultimonulo(char *linea)
 	for (i = 0; env[i] != NULL; i++)
 	{
 		if (strncmp("PATH", env[i], 4) == 0)
-			{
-			texto = env[i];
-			}
-	}
-	/*elimina la palabra PATH del PATH*/
-	i = 0;
-
-	for (i = 0; texto[i] != '\0'; i++)
-	{
-		texto[i] = texto[i + 5];
+		{
+			texto = env[i] + 5;
+		}
 	}
 	return (texto);
 }
