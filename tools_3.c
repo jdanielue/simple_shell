@@ -19,3 +19,21 @@ char *_strcat(char *dest, char *src)
 	}
 	return (dest);
 }
+
+/**
+ * _strcat - Concatenate 2 strings
+ * @dest: First string
+ * @src: Second string.
+ * Return: Concatenated string.
+ */
+
+void freedoblep(char **cartman)
+{
+	int i;
+
+	for (i = 0; *(cartman + i); i++)
+	{
+		free (*(cartman + i));
+	}
+	free(cartman);
+}
