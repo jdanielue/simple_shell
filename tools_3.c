@@ -21,19 +21,18 @@ char *_strcat(char *dest, char *src)
 }
 
 /**
- * _strcat - Concatenate 2 strings
- * @dest: First string
- * @src: Second string.
- * Return: Concatenated string.
+ * special_free - Free memory.
+ * @cartman: Pointer to be freeded.
+ * Return: No return.
  */
 
-void freedoblep(char **cartman)
+void special_free(char **cartman)
 {
 	int i;
 
 	for (i = 0; *(cartman + i); i++)
 	{
-		free (*(cartman + i));
+		free(*(cartman + i));
 	}
 	free(cartman);
 }
