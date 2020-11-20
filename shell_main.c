@@ -53,8 +53,10 @@ int main(int ac, char **av, char **env)
 					execve(token_path[i], token_line, NULL);
 				}
 			}
+			printf("%s : 1: %s: not found\n", av[0], token_line[0]);
 		}
-		printf("%s : 1: %s: not found\n", av[0], token_line[0]);
+		special_free(token_line);
 	}
+	free(linea);
 	return (0);
 }
