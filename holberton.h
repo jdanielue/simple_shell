@@ -19,5 +19,6 @@ char *buscar_path(char **env);
 int num_tokens(char **str);
 
 /* TOOLS_3 */
+char *our_strcat(char *dest, char *src);
 
 #endif
