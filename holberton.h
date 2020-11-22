@@ -9,6 +9,8 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
+void excecution_process(char **token_line, char **token_path, char **av);
+
 /* TOOLS_1 */
 char  **our_strtok(char *str, const char *delim);
 
@@ -19,5 +21,7 @@ char *buscar_path(char **env);
 int num_tokens(char **str);
 
 /* TOOLS_3 */
+char *our_strcat(char *dest, char *src);
+void special_free(char **cartman);
 
 #endif
