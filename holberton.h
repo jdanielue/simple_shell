@@ -23,5 +23,6 @@ int num_tokens(char **str);
 /* TOOLS_3 */
 char *our_strcat(char *dest, char *src);
 void special_free(char **cartman);
+void add_command_path(int num_path, char **token_path, char **token_line);
 
 #endif

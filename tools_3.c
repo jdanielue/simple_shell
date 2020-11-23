@@ -36,3 +36,22 @@ void special_free(char **cartman)
 	}
 	free(cartman);
 }
+
+/**
+ * add_command_path - Add the command and "/" to the path.
+ * @num_path: Number of directories on the PATH.
+ * @token_path: Directories on the PATH.
+ * @token_line: User input tokenized.
+ * Return: No return point.
+ */
+
+void add_command_path(int num_path, char **token_path, char **token_line)
+{
+	int i;
+
+	for (i = 0; i < num_path; i++) /*concatena linea al token*/
+	{
+		token_path[i] = our_strcat(token_path[i], "/");
+		token_path[i] = our_strcat(token_path[i], token_line[0]);
+	}
+}
