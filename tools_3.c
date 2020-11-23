@@ -42,7 +42,11 @@ void special_free(char **cartman)
  * @num_path: Number of directories on the PATH.
  * @token_path: Directories on the PATH.
  * @token_line: User input tokenized.
+<<<<<<< HEAD
  * Return: No return point.
+=======
+ * Return: No return.
+>>>>>>> f765c5438e6a3d3087bcb2ffb3854fa8bc339de2
  */
 
 void add_command_path(int num_path, char **token_path, char **token_line)
@@ -54,4 +58,8 @@ void add_command_path(int num_path, char **token_path, char **token_line)
 		token_path[i] = our_strcat(token_path[i], "/");
 		token_path[i] = our_strcat(token_path[i], token_line[0]);
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f765c5438e6a3d3087bcb2ffb3854fa8bc339de2
