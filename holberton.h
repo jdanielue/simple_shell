@@ -8,11 +8,13 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <signal.h>
 
 void excecution_process(char **token_line, char **token_path, char **av);
 
 /* TOOLS_1 */
 char  **our_strtok(char *str, const char *delim);
+int count_words(char *str, char *delim);
 
 /* TOOLS_2 */
 int largo(char *string);
@@ -25,4 +27,6 @@ char *our_strcat(char *dest, char *src);
 void special_free(char **cartman);
 void add_command_path(int num_path, char **token_path, char **token_line);
 
+
+void handle_sigint(int sig);
 #endif

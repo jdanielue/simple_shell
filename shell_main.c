@@ -15,7 +15,7 @@ int main(int __attribute__((unused)) ac, char **av, char **env)
 	char *my_propmt = "#U# ", *texto, *linea = NULL;
 	size_t  largo_linea = 0;
 	const char *delim = " ";
-	int i, num_path;
+	int num_path;
 	ssize_t readline = 0;
 
 if (!(isatty(STDIN_FILENO)))
@@ -33,6 +33,7 @@ if (!(isatty(STDIN_FILENO)))
 	}
 	else
 	{
+		signal(SIGINT, handle_sigint);
 		while (readline != EOF)
 		{
 			/*escribe #U#, lee el texto de entrada, cambia ENTER por '\0'*/
@@ -51,6 +52,11 @@ if (!(isatty(STDIN_FILENO)))
 			token_line = our_strtok(linea, delim); /*TOKENIZA la linea*/
 			add_command_path(num_path, token_path, token_line);
 			excecution_process(token_line, token_path, av);
+
+			/*for (i = 0; token_line[i] != '\0'; i++)
+				{
+					printf("token_line[%d] : %s",i , token_line[i]);
+				}*/
 		}
 	}
 free(linea);

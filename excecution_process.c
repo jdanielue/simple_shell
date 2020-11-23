@@ -42,6 +42,7 @@ void excecution_process(char **token_line, char **token_path, char **av)
 			}
 		}
 		printf("%s : 1: %s: not found\n", av[0], token_line[0]);
+			exit (127);
 		}
 	}
 }
