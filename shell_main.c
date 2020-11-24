@@ -45,6 +45,7 @@ if (!(isatty(STDIN_FILENO)))
 				continue;
 			}
 			ultimonulo(linea);
+			linea = no_spaces(linea);
 
 			texto = buscar_path(env); /*buscar el PATH en **env */
 			token_path = our_strtok(texto, ":"); /*TOKENIZA EL PATH*/

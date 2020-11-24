@@ -27,6 +27,7 @@ char *our_strcat(char *dest, char *src);
 void special_free(char **cartman);
 void add_command_path(int num_path, char **token_path, char **token_line);
 
-
+/* TOOLS_5 */
 void handle_sigint(int sig);
+char *no_spaces(char *linea);
 #endif

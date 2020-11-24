@@ -25,13 +25,10 @@ void excecution_process(char **token_line, char **token_path, char **av)
 		}
 		printf("%s : 1: %s: not found\n", av[0], token_line[0]);
 	}
-
-
-	else if (!(stat(token_line[0], &st) == 0))
+	else
 	{
 	process_exce = fork();
 	wait(NULL);
-
 		if (process_exce == 0)
 		{
 		for (i = 0; token_path[i]; i++)

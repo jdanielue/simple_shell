@@ -18,7 +18,7 @@ char  **our_strtok(char *str, const char *delim)
 			counter++;
 	}
 	counter = counter + 1;
-	palabras = malloc(sizeof(char *) * counter);
+	palabras = malloc(sizeof(char *) * (counter + 1));
 
 
 	for (iter = 0; iter < counter; iter++)
@@ -41,5 +41,6 @@ char  **our_strtok(char *str, const char *delim)
 	counter3 = counter3 + 1;
 	counter5 = 0;
 	}
+	palabras[iter] = NULL;
 	return (palabras);
 }
