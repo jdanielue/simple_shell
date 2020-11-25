@@ -25,6 +25,10 @@ char *no_spaces(char *linea)
 	}
 	mibuffer[j] = '\0';
 
+	for (i = 0; mibuffer[i]; i++)
+		linea[i] =  mibuffer[i];
+	linea[i] = 0;
+
 	if (mibuffer[0] == ' ')
 	{
 		for (i = 0; mibuffer[i] != '\0'; i++)

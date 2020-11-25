@@ -27,7 +27,7 @@ signal(SIGINT, handle_sigint);
 		readline = getline(&linea, &largo_linea, stdin);
 		if (readline == EOF)
 		{
-			write(STDOUT_FILENO, "\n", 1);
+			write(STDIN_FILENO, "\n", 1);
 			continue;
 		}
 
