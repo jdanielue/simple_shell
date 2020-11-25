@@ -1,7 +1,33 @@
-### In this REPO we make our own mini-version of a linux SHELL as part of the final first quarter project at Holberton.
+### In this REPO we make our own mini-version of a linux SHELL as part of the final first quarter project at Holberton School.  :muscle:
+#
+## -Installation:
+Git clone https://github.com/jdanielue/simple_shell.git
+#
+## -Execution:
+gcc -Wall -Werror -Wextra -pedantic *.c -o shell
+#
+## MORE ABUOT PROJECT
+#
+## Requirements:
+Basically the requirements of the prject were:
+#
+-Use gcc 4.8.4
 
-#### Since we can't use C Standar Libraries, we create the tools files in which we include, for example, a functional version of the strtok function.
+-Use the flags -Wall -Werror -Wextra -pedantic
 
+-Take into acount the indentation.
+
+-Don't have memory leaks.
+
+-No more than 40 lines per function.
+
+-No more than 5 functions per file.
+#
+## TOOLS:
+#
+
+
+#
+#
 ##### Autors:
-
-###### Daniel Urrego Escobar & Sergio Urrego.
+Daniel Urrego Escobar & Sergio Urrego.
