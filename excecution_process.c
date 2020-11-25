@@ -2,14 +2,15 @@
 #include <sys/stat.h>
 
 /**
- * excecution_process - Free memory.
+ * exc_process - Free memory.
  * @token_line: line splited into tokens
  * @token_path: path splited into tokens
  * @av:excecutable file argument
+ * @env: environment
  * Return: No return.
  */
 
-void excecution_process(char **token_line, char **token_path, char **av)
+void exc_process(char **token_line, char **token_path, char **av, char **env)
 {
 	int i = 0;
 	pid_t process_exce;
@@ -21,9 +22,10 @@ void excecution_process(char **token_line, char **token_path, char **av)
 		wait(NULL);
 		if (process_exce == 0)
 		{
-			execve(token_line[0], token_line, NULL);
+			execve(token_line[0], token_line, env);
 		}
-		printf("%s : 1: %s: not found\n", av[0], token_line[0]);
+		write(1, "error", 5);
+			exit(127;)
 	}
 	else
 	{
@@ -35,11 +37,11 @@ void excecution_process(char **token_line, char **token_path, char **av)
 		{
 			if (stat(token_path[i], &st) == 0)
 			{
-			execve(token_path[i], token_line, NULL);
+			execve(token_path[i], token_line, env);
 			}
 		}
-		printf("%s : 1: %s: not found\n", av[0], token_line[0]);
-			exit (127);
+		write(1, "error", 5);
+			exit(127);
 		}
 	}
 }
