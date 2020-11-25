@@ -33,6 +33,7 @@ void add_command_path(int num_path, char **token_path, char **token_line);
 /* TOOLS_4 */
 void *_calloc(unsigned int nmemb, unsigned int size);
 void handle_sigint(int sig);
+void set_null(char *linea);
 
 /* TOOLS_5 */
 char *no_spaces(char *linea);
