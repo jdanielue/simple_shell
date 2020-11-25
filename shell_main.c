@@ -20,22 +20,12 @@ int main(int __attribute__((unused)) ac, char **av, char **env)
 
 if (!(isatty(STDIN_FILENO)))
 	{
-		/*escribe #U#, lee el texto de entrada, cambia ENTER por '\0'*/
-		getline(&linea, &largo_linea, stdin);
-		ultimonulo(linea);
-		texto = buscar_path(env); /*buscar el PATH en **env */
-		token_path = our_strtok(texto, ":"); /*TOKENIZA EL PATH*/
-		num_path = num_tokens(token_path);/*Cuenta el numero de tokens*/
-		token_line = our_strtok(linea, delim); /*TOKENIZA la linea*/
-		add_command_path(num_path, token_path, token_line);
-		exc_process(token_line, token_path, av, env);
 	}
 	else
 	{
 		signal(SIGINT, handle_sigint);
 		while (readline != EOF)
 		{
-			/*escribe #U#, lee el texto de entrada, cambia ENTER por '\0'*/
 			write(STDOUT_FILENO, my_propmt, largo(my_propmt));
 			readline = getline(&linea, &largo_linea, stdin);
 			if (readline == EOF)
@@ -49,18 +39,14 @@ if (!(isatty(STDIN_FILENO)))
 
 			ultimonulo(linea);
 			linea = no_spaces(linea);
-
 			texto = buscar_path(env); /*buscar el PATH en **env */
 			token_path = our_strtok(texto, ":"); /*TOKENIZA EL PATH*/
 			num_path = num_tokens(token_path);/*Cuenta el numero de tokens*/
 			token_line = our_strtok(linea, delim); /*TOKENIZA la linea*/
 			add_command_path(num_path, token_path, token_line);
 			exc_process(token_line, token_path, av, env);
-
-		special_free(token_path);
-		token_path = NULL;
-		special_free(token_line);
-		token_path = NULL;
+/*special_free(token_path);token_path = NULL;*/
+/*special_free(token_line);token_path = NULL;*/
 		}
 	}
 free(linea);
