@@ -43,9 +43,8 @@ signal(SIGINT, handle_sigint);
 		add_command_path(num_path, token_path, token_line);
 		exc_process(token_line, token_path, av, env);
 		special_free(token_path);
-		token_path = NULL;
-		special_free(token_line);
-		token_path = NULL;
 	}
+
+
 free(linea);
 }
