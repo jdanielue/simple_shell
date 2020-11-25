@@ -18,15 +18,16 @@ void exc_process(char **token_line, char **token_path, char **av, char **env)
 
 	if (stat(token_line[0], &st) == 0)
 	{
-		process_exce = fork();
-		wait(NULL);
+	process_exce = fork();
+	wait(NULL);
 		if (process_exce == 0)
 		{
 			execve(token_line[0], token_line, env);
-		}
-		write(1, av[0], 5);
-		write(1, "\n", 1);
+			write(1, av[0], 5);
+			write(1, "\n", 1);
 			exit(127);
+		}
+
 	}
 	else
 	{
@@ -34,13 +35,13 @@ void exc_process(char **token_line, char **token_path, char **av, char **env)
 	wait(NULL);
 		if (process_exce == 0)
 		{
-		for (i = 0; token_path[i]; i++)
-		{
-			if (stat(token_path[i], &st) == 0)
+			for (i = 0; token_path[i]; i++)
 			{
-			execve(token_path[i], token_line, env);
+				if (stat(token_path[i], &st) == 0)
+				{
+				execve(token_path[i], token_line, env);
+				}
 			}
-		}
 		write(1, av[0], 5);
 		write(1, "\n", 1);
 			exit(127);

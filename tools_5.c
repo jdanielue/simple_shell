@@ -1,21 +1,6 @@
 #include "holberton.h"
 
 /**
- * handle_sigint - Free memory.
- * @a: line splited into tokens
- * Return: No return.
- */
-
-void handle_sigint(int __attribute__((unused)) a)
-{
-	char *my_propmt = "#U# ";
-
-	write(STDIN_FILENO, "\n", 1);
-	write(STDOUT_FILENO, my_propmt, largo(my_propmt));
-}
-
-
-/**
  * no_spaces - Free memory.
  * @linea: line splited into tokens
  * Return: No return.
@@ -23,10 +8,8 @@ void handle_sigint(int __attribute__((unused)) a)
 
 char *no_spaces(char *linea)
 {
-	char mibuffer[1024];
-	char auxiliar[1024];
+	char mibuffer[1024], auxiliar[1024], flag = 't';
 	int i, j = 0;
-	char flag = 't';
 
 	for (i = 0; linea[i] != '\0'; i++)
 	{
@@ -40,6 +23,7 @@ char *no_spaces(char *linea)
 		j++;
 		}
 	}
+	mibuffer[j] = '\0';
 
 	if (mibuffer[0] == ' ')
 	{
@@ -64,31 +48,4 @@ char *no_spaces(char *linea)
 	}
 	}
 	return (linea);
-}
-
-
-/**
- *_calloc-function that allocates memory for an array, using malloc
- *@size: size
- *@nmemb: amount of elements
- *
- *Return: Null or other thing
- **/
-void *_calloc(unsigned int nmemb, unsigned int size)
-{
-	char *p;
-	unsigned int n;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	p = malloc(size * nmemb);
-	if (p == NULL)
-	{
-		return (NULL);
-	}
-	for (n = 0; n < nmemb * size; n++)
-	{
-		p[n] = 0;
-	}
-	return (p);
 }
