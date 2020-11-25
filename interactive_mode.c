@@ -12,7 +12,7 @@
 
 void interactive_mode(char **av, char **env)
 {
-char **token_path = 0, **token_line = NULL;
+	char **token_path = 0, **token_line = NULL;
 	char *my_propmt = "#U# ", *texto, *linea = NULL;
 	size_t  largo_linea = 0;
 	const char *delim = " ";
@@ -36,10 +36,10 @@ signal(SIGINT, handle_sigint);
 
 		ultimonulo(linea);
 		linea = no_spaces(linea);
-		texto = buscar_path(env); /*buscar el PATH en **env */
-		token_path = our_strtok(texto, ":"); /*TOKENIZA EL PATH*/
-		num_path = num_tokens(token_path);/*Cuenta el numero de tokens*/
-		token_line = our_strtok(linea, delim); /*TOKENIZA la linea*/
+		texto = buscar_path(env);
+		token_path = our_strtok(texto, ":");
+		num_path = num_tokens(token_path);
+		token_line = our_strtok(linea, delim);
 		add_command_path(num_path, token_path, token_line);
 		exc_process(token_line, token_path, av, env);
 		special_free(token_path);
