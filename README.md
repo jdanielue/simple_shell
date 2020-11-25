@@ -23,7 +23,6 @@ Basically the requirements of the prject were:
 
 -No more than 5 functions per file.
 #
-#
 ## TOOLS:
 #
 
