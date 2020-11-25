@@ -8,15 +8,13 @@
 
 char *no_spaces(char *linea)
 {
-	char mibuffer[1024], auxiliar[1024], flag = 't';
+	char mibuffer[1024], auxiliar[1024];
 	int i, j = 0;
 
 	for (i = 0; linea[i] != '\0'; i++)
 	{
 		if (linea[i] == ' ' && linea[i + 1] == ' ')
-		{
-		continue;
-		}
+			continue;
 		else
 		{
 		mibuffer[j] = linea[i];
@@ -24,7 +22,6 @@ char *no_spaces(char *linea)
 		}
 	}
 	mibuffer[j] = '\0';
-
 	for (i = 0; mibuffer[i]; i++)
 		linea[i] =  mibuffer[i];
 	linea[i] = 0;
@@ -38,18 +35,31 @@ char *no_spaces(char *linea)
 		}
 		linea[i] = '\0';
 	}
+	set_null(linea);
+	return (linea);
+}
+
+/**
+ * set_null - Set to null all spaces after te string.
+ * @linea: buffer to set
+ * Return: No return.
+ */
+
+void set_null(char *linea)
+{
+	char flag = 't';
+	int i;
 
 	while (flag == 't')
 	{
-	flag = 'f';
-	for (i = 0; *(linea + i); i++)
-	{
-		if (*(linea + i + 1) == 0 && (*(linea + i) == 32))
+		flag = 'f';
+		for (i = 0; *(linea + i); i++)
 		{
-			*(linea + i) = 0;
-			flag = 't';
+			if (*(linea + i + 1) == 0 && (*(linea + i) == 32))
+			{
+				*(linea + i) = 0;
+				flag = 't';
+			}
 		}
 	}
-	}
-	return (linea);
 }
