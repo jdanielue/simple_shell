@@ -11,5 +11,7 @@
 void non_interactive_mode(char **av, char **env)
 {
 
+(void) av;
+(void) env;
 
 }

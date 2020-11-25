@@ -8,7 +8,7 @@
  * Return: Always 0 on success.
  */
 
-int main(int __attribute__((unused)) ac, char **av, char **env)
+int main(int __attribute__((unused)) ac, char  **av, char **env)
 {
 
 	if (!(isatty(STDIN_FILENO)))
