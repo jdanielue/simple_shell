@@ -9,8 +9,11 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <signal.h>
+#include <sys/stat.h>
 
 void exc_process(char **token_line, char **token_path, char **av, char **env);
+void non_interactive_mode(char **av, char **env);
+void interactive_mode(char **av, char **env);
 
 /* TOOLS_1 */
 char  **our_strtok(char *str, const char *delim);
