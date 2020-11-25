@@ -1,5 +1,7 @@
-### this is the readme file
+### In this REPO we make our own mini-version of a linux SHELL as part of the final first quarter project at Holberton.
 
-#### Autors:
+#### Since we can't use C Standar Libraries, we create the tools files in which we include, for example, a functional version of the strtok function.
 
-##### URREGO'S TEAM
+##### Autors:
+
+###### Daniel Urrego Escobar & Sergio Urrego
