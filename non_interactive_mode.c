@@ -2,12 +2,10 @@
 
 /**
  * non_interactive_mode - main of project shell
- * @av: Unused parameter.
- * @env: Allows to obtain the enviroment variables.
  * Return: No return
  */
 
-void non_interactive_mode(char **av, char **env)
+void non_interactive_mode(void)
 {
 	char **token_path = NULL;
 	char **token_line = NULL;
@@ -19,12 +17,12 @@ void non_interactive_mode(char **av, char **env)
 	getline(&linea, &largo_linea, stdin);
 	ultimonulo(linea);
 	linea = no_spaces(linea);
-	texto = buscar_path(env);
+	texto = buscar_path();
 	token_path = our_strtok(texto, ":");
 	num_path = num_tokens(token_path);
 	token_line = our_strtok(linea, delim);
 	add_command_path(num_path, token_path, token_line);
-	exc_process(token_line, token_path, av, env);
+	exc_process(token_line, token_path);
 	special_free(token_path);
 	special_free(token_line);
 }

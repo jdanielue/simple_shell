@@ -5,12 +5,10 @@
  * exc_process - Free memory.
  * @token_line: line splited into tokens
  * @token_path: path splited into tokens
- * @av:excecutable file argument
- * @env: environment
  * Return: No return.
  */
 
-void exc_process(char **token_line, char **token_path, char **av, char **env)
+void exc_process(char **token_line, char **token_path)
 {
 	int i = 0;
 	pid_t process_exce;
@@ -22,10 +20,8 @@ void exc_process(char **token_line, char **token_path, char **av, char **env)
 	wait(NULL);
 		if (process_exce == 0)
 		{
-			execve(token_line[0], token_line, env);
-			write(1, av[0], 5);
+			execve(token_line[0], token_line, environ);
 			write(1, "\n", 1);
-
 			exit(127);
 		}
 
@@ -40,10 +36,9 @@ void exc_process(char **token_line, char **token_path, char **av, char **env)
 			{
 				if (stat(token_path[i], &st) == 0)
 				{
-				execve(token_path[i], token_line, env);
+				execve(token_path[i], token_line, environ);
 				}
 			}
-		write(1, av[0], 5);
 		write(1, "\n", 1);
 			exit(127);
 		}

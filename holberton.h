@@ -11,9 +11,12 @@
 #include <signal.h>
 #include <sys/stat.h>
 
-void exc_process(char **token_line, char **token_path, char **av, char **env);
-void non_interactive_mode(char **av, char **env);
-void interactive_mode(char **av, char **env);
+extern char **environ;
+
+
+void exc_process(char **token_line, char **token_path);
+void non_interactive_mode(void);
+void interactive_mode(void);
 
 /* TOOLS_1 */
 char  **our_strtok(char *str, const char *delim);
@@ -22,7 +25,7 @@ int count_words(char *str, char *delim);
 /* TOOLS_2 */
 int largo(char *string);
 void ultimonulo(char *linea);
-char *buscar_path(char **env);
+char *buscar_path(void);
 int num_tokens(char **str);
 int _strcmpn(char *s1, char *s2, int n);
 

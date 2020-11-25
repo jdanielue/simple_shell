@@ -34,23 +34,22 @@ void ultimonulo(char *linea)
 
 /**
  * buscar_path - function that find the path and storage  in a double pointer
- *@env: environment
  * Return: zero.
  */
 
-	 char *buscar_path(char **env)
+	 char *buscar_path(void)
 {
 	char *texto = NULL, *path = "PATH";
 	int i, n, r;
 
 	n = 4;
 
-	for (i = 0; env[i] != NULL; i++)
+	for (i = 0; environ[i] != NULL; i++)
 	{
-		r = _strcmpn(path, env[i], n);
+		r = _strcmpn(path, environ[i], n);
 		if (r == 0)
 		{
-			texto = env[i] + 5;
+			texto = environ[i] + 5;
 		}
 	}
 	return (texto);
