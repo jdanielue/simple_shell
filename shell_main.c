@@ -10,10 +10,6 @@
 
 int main(int __attribute__((unused)) ac, char  **av, char **env)
 {
-
-	if (!(isatty(STDIN_FILENO)))
-		non_interactive_mode(av, env);
-	else
-		interactive_mode(av, env);
-return (0);
+	interactive_mode(av, env);
+	return (0);
 }
