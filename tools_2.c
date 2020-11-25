@@ -40,12 +40,15 @@ void ultimonulo(char *linea)
 
 	 char *buscar_path(char **env)
 {
-	char *texto = NULL;
-	int i;
+	char *texto = NULL, *path = "PATH";
+	int i, n, r;
+
+	n = 4;
 
 	for (i = 0; env[i] != NULL; i++)
 	{
-		if (strncmp("PATH", env[i], 4) == 0)
+		r = _strcmpn(path, env[i], n);
+		if (r == 0)
 		{
 			texto = env[i] + 5;
 		}
@@ -66,4 +69,30 @@ int num_tokens(char **str)
 	for (num_path = 0; str[num_path] != NULL; num_path++)
 	;
 	return (num_path);
+}
+
+
+#include "holberton.h"
+#include <stdio.h>
+
+/**
+ *_strcmpn - check 2 strings.
+ *@s1: variable
+ *@s2: variable
+ *@n: number of characters
+ * Return: Always m.
+ */
+int _strcmpn(char *s1, char *s2, int n)
+{
+	int m, i;
+
+	for (i = 0; i < n; i++)
+	{
+		if (s1[i] != s2[i])
+		{
+			m = s1[i] - s2[i];
+			return (m);
+		}
+	}
+return (0);
 }

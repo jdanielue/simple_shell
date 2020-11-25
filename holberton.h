@@ -24,6 +24,7 @@ int largo(char *string);
 void ultimonulo(char *linea);
 char *buscar_path(char **env);
 int num_tokens(char **str);
+int _strcmpn(char *s1, char *s2, int n);
 
 /* TOOLS_3 */
 char *our_strcat(char *dest, char *src);
