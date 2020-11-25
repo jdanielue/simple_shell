@@ -7,3 +7,9 @@
  * Return: No return
  */
 
+void non_interactive_mode(char **av, char **env)
+{
+	(void)env;
+
+	write(1, av, 5);
+}

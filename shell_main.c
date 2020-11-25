@@ -2,14 +2,17 @@
 
 /**
  * main - main of project shell
- * @ac: Unused parameter.
  * @av: Unused parameter.
+ * @ac: Argument count.
  * @env: Allows to obtain the enviroment variables.
- * Return: Always 0 on success.
+ * Return: No return
  */
 
 int main(int __attribute__((unused)) ac, char  **av, char **env)
 {
-	interactive_mode(av, env);
+	if (!(isatty(STDIN_FILENO)))
+		non_interactive_mode(av, env);
+	else
+		interactive_mode(av, env);
 	return (0);
 }
