@@ -25,7 +25,7 @@ void exc_process(char **token_line, char **token_path, char **av, char **env)
 			execve(token_line[0], token_line, env);
 		}
 		write(1, "error", 5);
-			exit(127;)
+			exit(127);
 	}
 	else
 	{
