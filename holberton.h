@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 #include <signal.h>
 
-void excecution_process(char **token_line, char **token_path, char **av);
+void exc_process(char **token_line, char **token_path, char **av, char **env);
 
 /* TOOLS_1 */
 char  **our_strtok(char *str, const char *delim);
@@ -30,4 +30,5 @@ void add_command_path(int num_path, char **token_path, char **token_line);
 /* TOOLS_5 */
 void handle_sigint(int sig);
 char *no_spaces(char *linea);
+void *_calloc(unsigned int nmemb, unsigned int size);
 #endif

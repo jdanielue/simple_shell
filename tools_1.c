@@ -28,7 +28,7 @@ char  **our_strtok(char *str, const char *delim)
 			counter2++;
 			counter4++;
 		}
-	*(palabras + iter) = malloc(sizeof(char) * counter4 + 1);
+	*(palabras + iter) = _calloc(sizeof(char), 512);
 	counter4 = 0;
 	while (str[counter3] != delim[0] && str[counter3] != '\0')
 	{
