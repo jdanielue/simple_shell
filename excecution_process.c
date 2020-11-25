@@ -23,8 +23,9 @@ void exc_process(char **token_line, char **token_path, char **av, char **env)
 		if (process_exce == 0)
 		{
 			execve(token_line[0], token_line, env);
-			write(STDERR_FILENO, av[0], 5);
-			write(STDERR_FILENO, "\n", 1);
+			write(1, av[0], 5);
+			write(1, "\n", 1);
+
 			exit(127);
 		}
 
@@ -42,8 +43,8 @@ void exc_process(char **token_line, char **token_path, char **av, char **env)
 				execve(token_path[i], token_line, env);
 				}
 			}
-		write(STDERR_FILENO, av[0], 5);
-		write(STDERR_FILENO, "\n", 1);
+		write(1, av[0], 5);
+		write(1, "\n", 1);
 			exit(127);
 		}
 	}
