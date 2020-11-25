@@ -24,7 +24,8 @@ void exc_process(char **token_line, char **token_path, char **av, char **env)
 		{
 			execve(token_line[0], token_line, env);
 		}
-		write(1, "error", 5);
+		write(1, av[0], 5);
+		write(1, "\n", 1);
 			exit(127);
 	}
 	else
@@ -40,7 +41,8 @@ void exc_process(char **token_line, char **token_path, char **av, char **env)
 			execve(token_path[i], token_line, env);
 			}
 		}
-		write(1, "error", 5);
+		write(1, av[0], 5);
+		write(1, "\n", 1);
 			exit(127);
 		}
 	}
