@@ -22,6 +22,9 @@ void exc_process(char **token_line, char **token_path)
 		{
 			execve(token_line[0], token_line, environ);
 			write(1, "\n", 1);
+			write(1, "\n", 1);
+			write(1, "\n", 1);
+			write(1, "\n", 1);
 			exit(127);
 		}
 
@@ -39,7 +42,10 @@ void exc_process(char **token_line, char **token_path)
 				execve(token_path[i], token_line, environ);
 				}
 			}
-		write(1, "\n", 1);
+			write(1, "\n", 1);
+			write(1, "\n", 1);
+			write(1, "\n", 1);
+			write(1, "\n", 1);
 			exit(127);
 		}
 	}
