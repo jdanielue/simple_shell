@@ -5,12 +5,14 @@ Git clone https://github.com/jdanielue/simple_shell.git
 #
 ## -Execution:
 gcc -Wall -Werror -Wextra -pedantic *.c -o shell
+
+./shell
 #
 ## MORE ABUOT PROJECT
 #
 ## Requirements:
-Basically the requirements of the prject were:
-#
+Basically the requirements of the project were:
+
 -Use gcc 4.8.4
 
 -Use the flags -Wall -Werror -Wextra -pedantic
@@ -34,6 +36,20 @@ Basically the requirements of the prject were:
 -ultimonulo: Puts NULL at the end of a string.
 
 -buscar_path: Find the PATH variable.
+
+-num_tokens: Count the number of directories in the path.
+
+-_strcmpn: Function compares n bytes of the string1 in the string2.
+#
+## tools_3.c
+-our_strcat: Concatenate 2 strings.
+
+-special_free: Free memory allocations.
+
+-add_command_path: Concatenate each directory of the path, an /, and the user input.
+#
+## tools_4.c
+
 
 #
 #
