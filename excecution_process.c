@@ -42,11 +42,27 @@ void exc_process(char **token_line, char **token_path)
 				execve(token_path[i], token_line, environ);
 				}
 			}
-			write(1, "\n", 1);
-			write(1, "\n", 1);
-			write(1, "\n", 1);
-			write(1, "\n", 1);
+			sys_err(token_line[0], "not found", token_line[0]);
 			exit(127);
 		}
 	}
+}
+
+/**
+ * sys_err - Set error mesages
+ * @av: Arguments
+ * @error: Error mesage.
+ * @av_o: Arguments.
+ * Return: No return.
+ */
+
+void sys_err(char *av, char *error, char *av_o)
+{
+	write(STDERR_FILENO, av_o, largo(av_o));
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, av, largo(av));
+	write(STDERR_FILENO, ": ", 2);
+	write(STDERR_FILENO, error, largo(error));
+	write(STDERR_FILENO, "\n", 1);
 }
