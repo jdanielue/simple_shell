@@ -16,12 +16,14 @@ void interactive_mode(void)
 	const char *delim = " ";
 	int num_path;
 	ssize_t readline = 0;
+	int counter = 0;
 
 signal(SIGINT, handle_sigint);
 
 	while (readline != EOF)
 	{
 		write(STDOUT_FILENO, my_propmt, largo(my_propmt));
+		counter++;
 		readline = getline(&linea, &largo_linea, stdin);
 		if (readline == EOF)
 		{
