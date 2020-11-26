@@ -5,10 +5,11 @@
  * exc_process - Free memory.
  * @token_line: line splited into tokens
  * @token_path: path splited into tokens
+ * @linea: user line.
  * Return: No return.
  */
 
-void exc_process(char **token_line, char **token_path)
+void exc_process(char **token_line, char **token_path, char *linea)
 {
 	int i = 0;
 	pid_t process_exce;
@@ -21,11 +22,6 @@ void exc_process(char **token_line, char **token_path)
 		if (process_exce == 0)
 		{
 			execve(token_line[0], token_line, environ);
-			write(1, "\n", 1);
-			write(1, "\n", 1);
-			write(1, "\n", 1);
-			write(1, "\n", 1);
-			exit(127);
 		}
 
 	}
@@ -43,6 +39,9 @@ void exc_process(char **token_line, char **token_path)
 				}
 			}
 			sys_err(token_line[0], "not found", token_line[0]);
+			special_free(token_path);
+			special_free(token_line);
+			free(linea);
 			exit(127);
 		}
 	}

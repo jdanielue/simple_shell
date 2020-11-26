@@ -41,7 +41,7 @@ signal(SIGINT, handle_sigint);
 		num_path = num_tokens(token_path);
 		token_line = our_strtok(linea, delim);
 		add_command_path(num_path, token_path, token_line);
-		exc_process(token_line, token_path);
+		exc_process(token_line, token_path, linea);
 		special_free(token_path);
 		special_free(token_line);
 	}
