@@ -25,7 +25,15 @@ Basically the requirements of the prject were:
 #
 ## TOOLS:
 #
+## tools_1.c 
+-our_strtok: The funcion works similar to the strtok() function
+#
+## tools_2.c
+-largo: Count the length of a string.
 
+-ultimonulo: Puts NULL at the end of a string.
+
+-buscar_path: Find the PATH variable.
 
 #
 #

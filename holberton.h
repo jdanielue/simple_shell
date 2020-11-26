@@ -42,4 +42,6 @@ void set_null(char *linea);
 /* TOOLS_5 */
 char *no_spaces(char *linea);
 
+void sys_err(char *av, char *error, char *av_o);
+
 #endif
