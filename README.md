@@ -25,7 +25,8 @@ Basically the requirements of the prject were:
 #
 ## TOOLS:
 #
-
+## tools_1.c
+-our_strtok: The funcion works similar to the strtok() function
 
 #
 #
