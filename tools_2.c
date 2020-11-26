@@ -37,7 +37,7 @@ void ultimonulo(char *linea)
  * Return: zero.
  */
 
-	 char *buscar_path(void)
+char *buscar_path(void)
 {
 	char *texto = NULL, *path = "PATH";
 	int i, n, r;
@@ -69,10 +69,6 @@ int num_tokens(char **str)
 	;
 	return (num_path);
 }
-
-
-#include "holberton.h"
-#include <stdio.h>
 
 /**
  *_strcmpn - check 2 strings.
