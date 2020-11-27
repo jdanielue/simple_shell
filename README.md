@@ -1,13 +1,14 @@
-
-
+![alt text](https://github.com/Alejandro2879/README-S/blob/master/holberton.png)  
 
 
 ### In this REPO we make our own mini-version of a linux SHELL as part of the final first quarter project at Holberton School.  :muscle:
-#
-## -Installation:
+
+
+
+### -Installation:
 Git clone https://github.com/jdanielue/simple_shell.git
-#
-## -Execution:
+
+### -Execution:
 gcc -Wall -Werror -Wextra -pedantic *.c -o shell
 
 ./shell
