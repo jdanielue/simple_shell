@@ -42,7 +42,6 @@ Basically the requirements of the project were:
 
 -buscar_path: Find the PATH variable.
 
-<<<<<<< HEAD
 ## EXAMPLES:
 
 ## Interactive mode
@@ -61,22 +60,7 @@ Basically the requirements of the project were:
 
 Here you can find the flowchart for the Shell Project
 
-![alt text](https://ibb.co/wNt2Fbz)
-=======
--num_tokens: Count the number of directories in the path.
-
--_strcmpn: Function compares n bytes of the string1 in the string2.
-#
-## tools_3.c
--our_strcat: Concatenate 2 strings.
-
--special_free: Free memory allocations.
-
--add_command_path: Concatenate each directory of the path, an /, and the user input.
-#
-## tools_4.c
-
->>>>>>> 34f2aef55c5a478a8b2dbfbc68a22871e54f569c
+![alt text](https://i.ibb.co/DDdjH6R/shell-flowchart.jpg)
 
 #
 #
