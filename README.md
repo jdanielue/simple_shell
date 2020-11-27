@@ -41,7 +41,25 @@ Basically the requirements of the project were:
 -ultimonulo: Puts NULL at the end of a string.
 
 -buscar_path: Find the PATH variable.
+#
+## tools_3.c
+-our_strcat: Concatenate 2 strings.
 
+-special_free: Free memory allocations.
+
+-add_command_path: Concatenate each directory of the path, an /, and the user input.
+#
+## tools_4.c
+-_calloc-function that allocates memory for an array, using malloc
+
+-handle_sigint - Free memory.
+#
+## tools_5.c
+-no_spaces - Free memory.
+
+-set_null - Set to null all spaces after te string.
+
+#
 ## EXAMPLES:
 
 ## Interactive mode

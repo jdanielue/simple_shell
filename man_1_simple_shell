@@ -1,17 +1,98 @@
-.TH SHELL PROJECT
-.SH SIMPLE_SHELL
+.TH man_1_simple_shell  "November 28 2020"
 
-corrupt \- modify files by randomly changing bits
+.SH NAME
+Simple_shell -  Cohort 13 - Holberton school shell
+
 .SH SYNOPSIS
-.B corrupt
-[\fB\-n\fR \fIBITS\fR]
-[\fB\-\-bits\fR \fIBITS\fR]
-.IR file ...
+.B simple_shell format [[command line][argumment...]]...
+
 .SH DESCRIPTION
-.B corrupt
-modifies files by toggling a randomly chosen bit.
+.PP
+The  simple_shell is a command interpreter who is able to receive instructions from the user and send to the Operative system.
+
+.SS Overview
+.PP
+Shell is an environment in which we can run our commands located at the PATH and some built ins.
+
+.SS PATH
+.PP
+The PATH is an environment variable where you can get all the excecutable files splited by directories. When locating a command, the shell first looks to see if it has a shell function by that name.Then it looks for a builtin command by that name.  If a builtin command not found then the shell show the next message sh: 1: kkssla: not found.
+
 .SH OPTIONS
-.TP
-.BR \-n ", " \-\-bits =\fIBITS\fR
-Set the number of bits to modify.
-Default is one bit.
+.PP LIST Most used commands
+.IP  pwd command
+Use the pwd command to find out the path of the current working directory (folder) you’re in. The command will return an absolute (full) path, which is basically a path of all the directories that starts with a forward slash (/). An example of an absolute path is /home/username.
+.IP cd command
+To navigate through the Linux files and directories, use the cd command. It requires either the full path or the name of the directory, depending on the current working directory that you’re in.
+.IP ls command
+The ls command is used to view the contents of a directory. By default, this command will display the contents of your current working directory.
+.IP  rm command
+The rm command is used to delete directories and the contents within them. If you only want to delete the directory — as an alternative to rmdir — use rm -r.
+.IP clear
+clear the screen
+
+
+
+.RE
+
+.SS RETURN
+.PP
+The value returned is -1 on error (e.g., fork(2) failed), and the return status of the command otherwise. This latter return status is in the format specified in wait(2). Thus, the exit code of the command will be WEXITSTATUS(status). In case /bin/sh could not be executed, the exit status will be that of a command that does exit(127).
+
+.SS ENVIRONMENT
+.RS
+.ns
+        PATH    The default search path for executables.  See the above section Path Search.
+..RE
+
+
+.SH EXAMPLES
+.RS
+.SS In interactive mode
+.B
+
+simple_shell> ./hsh
+#U# ls -la /tmp
+total 14
+drwxrwxrwt  6 root    root    4096 Nov 27 06:55 .
+drwxr-xr-x 23 root    root    4096 Nov 26 15:35 ..
+drwxrwxrwt  2 root    root    4096 Nov 26 15:35 .ICE-unix
+prwx------  1 vagrant vagrant    0 Nov 27 06:55 pipe_client_request_2028_13
+prwx------  1 vagrant vagrant    0 Nov 27 06:55 pipe_client_request_2028_14
+prwx------  1 vagrant vagrant    0 Nov 27 07:10 pipe_client_request_2028_15
+prwx------  1 vagrant vagrant    0 Nov 26 21:19 pipe_client_request_2028_6
+prwx------  1 vagrant vagrant    0 Nov 27 06:42 pipe_client_response_2028_13
+prwx------  1 vagrant vagrant    0 Nov 27 06:52 pipe_client_response_2028_14
+prwx------  1 vagrant vagrant    0 Nov 27 06:55 pipe_client_response_2028_15
+prwx------  1 vagrant vagrant    0 Nov 26 16:24 pipe_client_response_2028_6
+drwxrwxrwt  2 root    root    4096 Nov 26 15:35 .X11-unix
+.B
+simple_shell> echo "ls -la /tmp" | ./hsh
+total 14
+drwxrwxrwt  6 root    root    4096 Nov 27 06:55 .
+drwxr-xr-x 23 root    root    4096 Nov 26 15:35 ..
+drwxrwxrwt  2 root    root    4096 Nov 26 15:35 .ICE-unix
+prwx------  1 vagrant vagrant    0 Nov 27 06:55 pipe_client_request_2028_13
+prwx------  1 vagrant vagrant    0 Nov 27 06:55 pipe_client_request_2028_14
+prwx------  1 vagrant vagrant    0 Nov 27 07:10 pipe_client_request_2028_15
+prwx------  1 vagrant vagrant    0 Nov 26 21:19 pipe_client_request_2028_6
+prwx------  1 vagrant vagrant    0 Nov 27 06:42 pipe_client_response_2028_13
+prwx------  1 vagrant vagrant    0 Nov 27 06:52 pipe_client_response_2028_14
+prwx------  1 vagrant vagrant    0 Nov 27 06:55 pipe_client_response_2028_15
+prwx------  1 vagrant vagrant    0 Nov 26 16:24 pipe_client_response_2028_6
+drwxrwxrwt  2 root    root    4096 Nov 26 15:35 .X11-unix
+ $
+
+
+.SH BUGS
+If you found some issues or bugs please report to the AUTHORS
+
+.SH AUTHORS
+
+.br
+Daniel Urrego
+.B 2360@holbertonschool.com
+
+.br
+Sergio Urrego
+.B 2016@holbertonschool.com
