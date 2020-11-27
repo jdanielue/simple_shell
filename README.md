@@ -25,7 +25,7 @@ Basically the requirements of the prject were:
 #
 ## TOOLS:
 #
-## tools_1.c 
+## tools_1.c
 -our_strtok: The funcion works similar to the strtok() function
 #
 ## tools_2.c
@@ -35,7 +35,30 @@ Basically the requirements of the prject were:
 
 -buscar_path: Find the PATH variable.
 
+## EXAMPLES:
+
+## Interactive mode
+	`ls -a`
+
+	   `AUTHORS               .git         hsh                 man_1_simple_shell      README.md     tools_1.c`  `tools_3.c  tools_5.c
+	`..  excecution_process.c  holberton.h  interactive_mode.c  non_interactive_mode.c  shell_main.c  tools_2.c`  `tools_4.c`
+
+## Non Interactive mode
+	`echo "ls -a" | ./hsh`
+
+	   `AUTHORS               .git         hsh                 man_1_simple_shell      README.md     tools_1.c`  `tools_3.c  tools_5.c
+	`..  excecution_process.c  holberton.h  interactive_mode.c  non_interactive_mode.c  shell_main.c  tools_2.c`  `tools_4.c`
+
+## FLOWCHART:
+
+Here you can find the flowchart for the Shell Project
+
+![alt text](https://ibb.co/wNt2Fbz)
+
 #
 #
 ##### Autors:
-Daniel Urrego Escobar & Sergio Urrego.
+**Daniel Urrego Escobar**
+Holberton Student MED -COL
+**Sergio Urrego**
+Holberton Student MED -COL
