@@ -51,7 +51,9 @@ The value returned is -1 on error (e.g., fork(2) failed), and the return status 
 .SS In interactive mode
 .B
 
-simple_shell> ./hsh
+.RS
+.nf
+.B simple_shell> ./hsh
 #U# ls -la /tmp
 total 14
 drwxrwxrwt  6 root    root    4096 Nov 27 06:55 .
@@ -66,8 +68,12 @@ prwx------  1 vagrant vagrant    0 Nov 27 06:52 pipe_client_response_2028_14
 prwx------  1 vagrant vagrant    0 Nov 27 06:55 pipe_client_response_2028_15
 prwx------  1 vagrant vagrant    0 Nov 26 16:24 pipe_client_response_2028_6
 drwxrwxrwt  2 root    root    4096 Nov 26 15:35 .X11-unix
+.RE
+
 .B
-simple_shell> echo "ls -la /tmp" | ./hsh
+.RS
+.nf
+.B simple_shell> echo "ls -la /tmp" | ./hsh
 total 14
 drwxrwxrwt  6 root    root    4096 Nov 27 06:55 .
 drwxr-xr-x 23 root    root    4096 Nov 26 15:35 ..
@@ -82,7 +88,7 @@ prwx------  1 vagrant vagrant    0 Nov 27 06:55 pipe_client_response_2028_15
 prwx------  1 vagrant vagrant    0 Nov 26 16:24 pipe_client_response_2028_6
 drwxrwxrwt  2 root    root    4096 Nov 26 15:35 .X11-unix
  $
-
+.RE
 
 .SH BUGS
 If you found some issues or bugs please report to the AUTHORS
