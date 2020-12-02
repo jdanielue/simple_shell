@@ -21,7 +21,6 @@ void exc_process(char **token_line, char **token_path)
 		if (process_exce == 0)
 		{
 			execve(token_line[0], token_line, environ);
-			exit(127);
 		}
 
 	}
