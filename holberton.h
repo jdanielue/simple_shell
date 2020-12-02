@@ -14,7 +14,7 @@
 extern char **environ;
 
 
-void exc_process(char **token_line, char **token_path, char *linea);
+void exc_process(char **token_line, char **token_path);
 void non_interactive_mode(void);
 void interactive_mode(void);
 
