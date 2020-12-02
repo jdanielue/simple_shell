@@ -42,7 +42,7 @@ void exc_process(char **token_line, char **token_path, char *linea)
 			special_free(token_path);
 			special_free(token_line);
 			free(linea);
-			exit(127);
+			exit(0);
 		}
 	}
 }

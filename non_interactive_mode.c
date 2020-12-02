@@ -26,5 +26,5 @@ exc_process(token_line, token_path, linea);
 special_free(token_path);
 special_free(token_line);
 free(linea);
-exit(127);
+exit(0);
 }
