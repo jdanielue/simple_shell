@@ -5,7 +5,6 @@
  * exc_process - Free memory.
  * @token_line: line splited into tokens
  * @token_path: path splited into tokens
- * @linea: user line.
  * Return: No return.
  */
 
