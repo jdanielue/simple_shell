@@ -9,6 +9,7 @@ int main(void)
 {
 	if (!(isatty(STDIN_FILENO)))
 		non_interactive_mode();
+
 	else
 		interactive_mode();
 	return (0);

@@ -22,5 +22,9 @@ token_path = our_strtok(texto, ":");
 num_path = num_tokens(token_path);
 token_line = our_strtok(linea, delim);
 add_command_path(num_path, token_path, token_line);
-exc_process(token_line, token_path, linea);
+exc_process(token_line, token_path);
+special_free(token_path);
+special_free(token_line);
+free(linea);
+exit(127);
 }
